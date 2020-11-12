@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+*{
+  box-sizing: border-box;
+}
+
+body{
+  padding:0;
+  margin:0;
+  background-color: #8D8D8D;
+  padding-top:30vh;
+}
+
+.main-container{
+  width:45vw;
+  margin:auto;
+  border:5px solid #FEA500;
+  background-color: #B3B3B3;
+  display:grid;
+  grid-template-columns: 50% 50%;
+  padding:10px 20px;
+  text-align: center;
+}
+
+.controls-container{
+  
+  text-align: center;
+  padding:0;
+  margin:0;
+  font-family: 'Russo One', sans-serif;
+  letter-spacing: 1px;
+  padding-top:50px;
+  padding-bottom:50px;
+}
+
+.power-slider{
+ 
+  background-color: black;
+  width:50px;
+  display: inline-block;
+  height:27px;
+  padding:3px;
+  margin:0px;
+}
+.p-slider{
+  padding:0px;
+  margin:0px;
+  height:100%;
+  width:50%;
+  background-color: #0800FF;
+  cursor: pointer;
+  transition: transform 0.5s;
+  transform: translateX(0)
+  
+  
+}
+
+.display{
+
+  width:70%;
+  height:40px;
+  background-color: #808080;
+  margin:auto;
+  margin-top:10px;
+  margin-bottom:10px;
+  padding:10px;
+}
+
+.slider{
+  width:90%;
+  margin-top:10px;
+  margin-bottom:20px;
+  -webkit-appearance: none;
+ 
+  border-radius: 5px;
+  background: #424242;
+  outline: none;
+  height:10px;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 19px;
+ 
+  background: #0800FF;
+  cursor: pointer;
+}
+
+.board-container{
+
+  display: grid;
+  padding-top:40px;
+  grid-template-columns: 31% 31% 31%;
+  grid-column-gap: 10px ;
+  grid-row-gap: 10px;
+  height:90%;
+}
+.keys{
+  border-radius: 7px;
+  padding:20px;
+  background-color: #808080;
+  box-shadow: 3px 3px 5px black;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+
+}
+audio{
+  position: absolute;
+  display: inline-block;
+
+
+}
+
+.slide{
+  transform: translateX(100%);
+}
+
