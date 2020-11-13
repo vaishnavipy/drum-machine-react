@@ -3,11 +3,20 @@
   box-sizing: border-box;
 }
 
+
 body{
   padding:0;
   margin:0;
   background-color: #8D8D8D;
-  padding-top:30vh;
+  
+}
+
+.logo{
+  font-family: 'Russo One', sans-serif;
+  text-align: center;
+  
+  padding-top:20vh;
+  
 }
 
 .main-container{
@@ -16,10 +25,18 @@ body{
   border:5px solid #FEA500;
   background-color: #B3B3B3;
   display:grid;
+  
+  margin-top:20px ;
   grid-template-columns: 50% 50%;
   padding:10px 20px;
   text-align: center;
+
+ 
+ 
+ 
 }
+
+
 
 .controls-container{
   
@@ -107,6 +124,7 @@ body{
   cursor: pointer;
   text-align: center;
   position: relative;
+  font-weight: 800;
 
 }
 audio{
@@ -119,4 +137,22 @@ audio{
 .slide{
   transform: translateX(100%);
 }
+
+@media screen and (max-width: 1000px) {
+
+
+.main-container{
+  width:75vw;
+}
+
+}
+@media screen and (max-width: 700px) {
+
+
+  .main-container{
+    width:70vw;
+   grid-template-columns: 100%;
+  }
+  
+  }
 

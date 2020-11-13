@@ -12,7 +12,9 @@ function App() {
   const [keyNames,setKeyNames] = useState("");
   const [bgColor] = useState("#808080");
   const [power,setPower] = useState(true) ;
-  const [boardType,setBoardType] = useState("Heater")
+  const [boardType,setBoardType] = useState("Heater");
+  const [volume,setVolume] = useState(50);
+  
 
   const [boardArray1,boardArray2] = useBoard();
 
@@ -38,18 +40,27 @@ function App() {
 
   }
 
+  function handleVolumeChange(volume){
+    setVolume(volume)
+    setKeyNames(`Volume:${volume}`)
+
+  }
   
 
   return (
+    <div  className="logo">
+     <span style={{fontSize: 25}} > DRUM MACHINE </span>
     <div className="main-container">
       {
         boardType == "Heater" ? 
-                <HeaterKeyboard handleKeyNameChange={handleKeyNameChange} bgColor={bgColor} power={power}/> :
-                <PianoKeyboard handleKeyNameChange={handleKeyNameChange} bgColor={bgColor} power={power} /> 
+                <HeaterKeyboard handleKeyNameChange={handleKeyNameChange} bgColor={bgColor} power={power} volume={volume}/> :
+                <PianoKeyboard handleKeyNameChange={handleKeyNameChange} bgColor={bgColor} power={power} volume={volume}/> 
       } 
-       <Controls keyName={keyNames} handleOnOff={handleOnOff} power={power}/>
+       <Controls keyName={keyNames} handleOnOff={handleOnOff} power={power} handleVolumeChange={handleVolumeChange}/>
      
     </div>
+    </div>
+    
   );
 }
 

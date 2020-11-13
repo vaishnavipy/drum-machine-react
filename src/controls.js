@@ -1,4 +1,4 @@
-import React,{useRef} from "react";
+import React,{useRef,useState} from "react";
 import "./App.css"
 
 function Controls(props){
@@ -6,11 +6,20 @@ function Controls(props){
     const pSliderRef = useRef();
     const bSliderRef = useRef();
 
+    const [volume,setVolume] = useState(50);
+
     function handleClick(event){
       
        event.target.classList.toggle("slide");
 
        props.handleOnOff(event.target.getAttribute("id"))
+    }
+
+    function handleVolume(event){
+
+        setVolume(event.target.value)
+        props.handleVolumeChange(event.target.value)
+
     }
 
     return(
@@ -25,7 +34,7 @@ function Controls(props){
         {props.power ?  props.keyName : ""}
         </div>
 
-        <input type="range" min="1" max="100" className="slider" />
+        <input type="range" min="1" max="100" className="slider" onChange={handleVolume} value={volume}/>
 
         <h4 style={{padding:0,margin:0}}>Bank</h4>
        
